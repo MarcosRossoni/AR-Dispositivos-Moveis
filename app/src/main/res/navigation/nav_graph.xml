@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/DashboardFragment">
+
+    <fragment
+        android:id="@+id/DashboardFragment"
+        android:name="com.example.ardispositivosmoveis.DashboardFragment"
+        android:label="@string/dashboard_label"
+        tools:layout="@layout/fragment_dashboard">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/DespesaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/DespesaFragment"
+        android:name="com.example.ardispositivosmoveis.DespesaFragment"
+        android:label="@string/depesas_label"
+        tools:layout="@layout/fragment_despesa">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/DashboardFragment" />
+    </fragment>
+</navigation>

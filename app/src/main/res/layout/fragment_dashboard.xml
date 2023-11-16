@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EBF5F6"
+    tools:context=".DashboardFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/button_receita"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="#31D5CE"
+            android:drawableLeft="@drawable/baseline_attach_money_24"
+            android:text="Renda"
+            android:textColor="@color/black"
+            tools:ignore="HardcodedText,MissingConstraints" />
+
+        <Button
+            android:id="@+id/button_despesa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="#31D5CE"
+            android:drawableLeft="@drawable/baseline_money_off_24"
+            android:text="Despesa"
+            android:textColor="@color/black"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
