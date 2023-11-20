@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#EBF5F6"
-    tools:context=".DespesaFragment">
+    tools:context=".ReceitasFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,10 +15,10 @@
         android:paddingTop="10dp">
 
         <EditText
-            android:id="@+id/descricao_despesa"
+            android:id="@+id/descricao_receita"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Descrição da Despesa" />
+            android:hint="Descrição da Receita" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,20 +26,20 @@
             android:orientation="horizontal">
 
             <com.santalu.maskara.widget.MaskEditText
-                android:id="@+id/data_despesa"
+                android:id="@+id/data_receita"
                 android:layout_width="189dp"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:hint="Data da Despesa"
+                android:hint="Data da Receita"
                 android:inputType="date"
                 app:mask="##/##/####" />
 
             <EditText
-                android:id="@+id/valor_despesa"
+                android:id="@+id/valor_receita"
                 android:layout_width="189dp"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:hint="Valor da Despesa"
+                android:hint="Valor da Receita"
                 android:inputType="numberDecimal" />
         </LinearLayout>
 
@@ -54,8 +54,9 @@
             android:textColor="@color/black" />
 
         <include
-            android:id="@+id/recyclerview_despesa"
+            android:id="@+id/recyclerview_receita"
             layout="@layout/activity_list_lancamento" />
 
     </LinearLayout>
+
 </androidx.core.widget.NestedScrollView>

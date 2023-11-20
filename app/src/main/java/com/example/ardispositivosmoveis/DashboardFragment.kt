@@ -26,7 +26,11 @@ class DashboardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonDespesa.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            findNavController().navigate(R.id.action_despesa_fragment)
+        }
+
+        binding.buttonReceita.setOnClickListener {
+            findNavController().navigate(R.id.action_receita_fragment)
         }
     }
 

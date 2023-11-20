@@ -12,6 +12,8 @@ class AdapterLancamento(private val context: Context, private val listLancamento
 
         class LancamentoViewHolder(binding: LancamentoItemBinding) : RecyclerView.ViewHolder(binding.root) {
             val descricaoLancamento = binding.descricaoLancamento
+            val dataLancamento = binding.dataLancamento
+            val valorLancamento = binding.valorLancamento
 
         }
 
@@ -26,5 +28,7 @@ class AdapterLancamento(private val context: Context, private val listLancamento
 
     override fun onBindViewHolder(holder: LancamentoViewHolder, position: Int) {
         holder.descricaoLancamento.text = listLancamento[position].descricao
+        holder.dataLancamento.text = listLancamento[position].dataLancamento
+        holder.valorLancamento.text = listLancamento[position].valorLancamento
     }
 }

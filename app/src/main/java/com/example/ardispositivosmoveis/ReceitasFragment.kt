@@ -1,21 +1,19 @@
 package com.example.ardispositivosmoveis
 
-import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ardispositivosmoveis.adapter.AdapterLancamento
 import com.example.ardispositivosmoveis.databinding.FragmentDespesaBinding
+import com.example.ardispositivosmoveis.databinding.FragmentReceitasBinding
 import com.example.ardispositivosmoveis.model.Lancamento
-import kotlin.math.log
 
-class DespesaFragment : Fragment() {
+class ReceitasFragment : Fragment() {
 
-    private var _binding: FragmentDespesaBinding? = null
+    private var _binding: FragmentReceitasBinding? = null
     private lateinit var adapterLancamento: AdapterLancamento
     private val listaLancamento: MutableList<Lancamento> = mutableListOf()
 
@@ -25,17 +23,14 @@ class DespesaFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        _binding = FragmentDespesaBinding.inflate(inflater, container, false)
+        _binding = FragmentReceitasBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val recyclerviewLancamentos = binding.recyclerviewDespesa.recyclerviewLancamentos
+        val recyclerviewLancamentos = binding.recyclerviewReceita.recyclerviewLancamentos
         recyclerviewLancamentos.layoutManager = LinearLayoutManager(requireContext())
         recyclerviewLancamentos.setHasFixedSize(true)
         adapterLancamento = AdapterLancamento(requireContext(), listaLancamento)
@@ -43,19 +38,19 @@ class DespesaFragment : Fragment() {
 
         binding.buttonAdicionar.setOnClickListener {
 
-            configTextValor(binding.valorDespesa.text.toString())
+            configTextValor(binding.valorReceita.text.toString())
             listaLancamento.add(
                 Lancamento(
-                    binding.descricaoDespesa.text.toString(),
-                    binding.dataDespesa.text.toString(),
-                    configTextValor(binding.valorDespesa.text.toString())
+                    binding.descricaoReceita.text.toString(),
+                    binding.dataReceita.text.toString(),
+                    configTextValor(binding.valorReceita.text.toString())
                 )
             )
 
             adapterLancamento.notifyDataSetChanged()
-            binding.descricaoDespesa.setText("")
-            binding.dataDespesa.setText("")
-            binding.valorDespesa.setText("")
+            binding.descricaoReceita.setText("")
+            binding.dataReceita.setText("")
+            binding.valorReceita.setText("")
         }
     }
 
@@ -81,4 +76,5 @@ class DespesaFragment : Fragment() {
 
         return "R$ ${valor.replace(".", ",")}"
     }
+
 }

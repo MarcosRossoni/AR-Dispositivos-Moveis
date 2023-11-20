@@ -1,5 +1,6 @@
 package com.example.ardispositivosmoveis
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import androidx.navigation.NavController
 import com.example.ardispositivosmoveis.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -41,8 +43,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
+            R.id.action_info -> {
+                val i = Intent(this, InfoActivity::class.java)
+                startActivity(i)
+                true
+            }
+            else -> {
+                super.onOptionsItemSelected(item)
+            }
         }
     }
 

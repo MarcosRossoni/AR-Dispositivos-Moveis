@@ -12,8 +12,11 @@
         tools:layout="@layout/fragment_dashboard">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            android:id="@+id/action_despesa_fragment"
             app:destination="@id/DespesaFragment" />
+        <action
+            android:id="@+id/action_DashboardFragment_to_receitasFragment"
+            app:destination="@id/action_receita_fragment" />
     </fragment>
     <fragment
         android:id="@+id/DespesaFragment"
@@ -23,6 +26,15 @@
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/DashboardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/action_receita_fragment"
+        android:name="com.example.ardispositivosmoveis.ReceitasFragment"
+        android:label="@string/receitas_label"
+        tools:layout="@layout/fragment_receitas" >
+        <action
+            android:id="@+id/action_receitasFragment_to_DashboardFragment"
             app:destination="@id/DashboardFragment" />
     </fragment>
 </navigation>
